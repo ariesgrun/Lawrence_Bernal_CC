@@ -26,12 +26,25 @@ function draw() {
     nextX = currentX + random(-12, 12);
   }
 
+  if (nextX > windowWidth) {
+    nextX = windowWidth
+  }
+  else if (nextX < 0 ) {
+    nextX = 0
+  }
+
+  if (nextY > windowHeight) {
+    nextY = windowHeight
+  }
+  else if (nextY < 0 ) {
+    nextY = 0
+  }
+  
+
   line(currentX, currentY, nextX, nextY);
   currentX = nextX;
   currentY = nextY;
-  
 
-  
 }
 
 
