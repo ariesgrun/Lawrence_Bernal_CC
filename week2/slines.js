@@ -38,10 +38,10 @@ function draw() {
   else if (nextY < 0 ) {
     nextY = 0
   }
-  
-
-
-  stroke(random(0,255), random(0,255), random(0,255))
+  let r = map(currentX, 0, windowWidth, 0, 255);
+  let g = map(currentY, 0, windowHeight, 0, 255);
+  // stroke(random(0,255), random(0,255), random(0,255))
+  stroke(r , g , 100)
   line(currentX, currentY, nextX, nextY);
   currentX = nextX;
   currentY = nextY;
