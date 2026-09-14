@@ -18,14 +18,13 @@ function draw() {
   stroke("#FFFFFF")
 
   if (mouseIsPressed) {
-    nextY = mouseX;
-    nextX = mouseY;
-    
+    nextY = mouseY;
+    nextX = mouseX; 
   }
-  
- 
-  nextY = currentY + random(-12, 12);
-  nextX = currentX + random(-12, 12);
+  else{
+    nextY = currentY + random(-12, 12);
+    nextX = currentX + random(-12, 12);
+  }
 
   line(currentX, currentY, nextX, nextY);
   currentX = nextX;
