@@ -21,8 +21,6 @@ function setup() {
 function draw() {
   background(0);
   // "#315329"
-  fill(255, 0, 0);
-  box();
 
     // if (mouseIsPressed) {
     // cam.move(0, 0, -1);
@@ -42,6 +40,20 @@ else if (keyIsDown(RIGHT_ARROW)) {
 }
 orbitControl();
 
+if (cam.eyeY < 0){
+  fill(255, 0, 0);
+}
+else{fill(0, 255, 0);}
 
+box();
+
+
+
+for (let i = 0; i < 6; i++) {
+  push();
+  sphere(50);
+  pop;
+  
+}
 
 }
