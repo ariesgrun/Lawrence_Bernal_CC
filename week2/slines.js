@@ -15,7 +15,6 @@ let currentX;
 let currentY;
 
 function draw() {
-  stroke("#FFFFFF")
 
   if (mouseIsPressed) {
     nextY = mouseY;
@@ -41,6 +40,8 @@ function draw() {
   }
   
 
+
+  stroke(random(0,255), random(0,255), random(0,255))
   line(currentX, currentY, nextX, nextY);
   currentX = nextX;
   currentY = nextY;
