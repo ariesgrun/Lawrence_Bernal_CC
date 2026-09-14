@@ -6,7 +6,9 @@ function setup() {
   frameRate(30)
   currentX = windowWidth / 2;
   currentY = windowHeight / 2;
-  angleMode(DEGREES)
+  angleMode(DEGREES);
+  rectMode(CENTER);
+
 }
 //https://p5js.org/reference/p5/noise/
 //always returns values between 0 and 1
@@ -45,10 +47,10 @@ function draw() {
 
   }
 
-  // circle(currentX, currentY, size);
-  push()
+  //circle(currentX, currentY, size);
+  push();
   translate(currentX, currentY);
   rotate(angle);
   rect(0,0,size,size)
-  pop()
+  pop();
 }

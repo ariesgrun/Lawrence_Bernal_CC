@@ -6,6 +6,7 @@ function setup() {
   currentX= windowWidth/2;
   currentY= windowHeight/2;
   frameRate(24);
+  colorMode(HSB);
 }
 //line(x1, y1, x2, y2)
 //goal - Draw a continous line that randomly chooses next position 
