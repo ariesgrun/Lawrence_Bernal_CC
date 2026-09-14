@@ -1,3 +1,11 @@
+// https://p5js.org/tutorials/coordinates-and-transformations/
+// https://p5js.org/tutorials/custom-geometry/
+// https://p5js.org/tutorials/lights-camera-materials/#camera-and-view
+// https://p5js.org/reference/p5/camera/
+
+
+
+
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
   
@@ -12,7 +20,7 @@ function draw() {
   box();
 
   for (let i = 0; i < windowWidth; i += 50) {{
-      push()
+        push()
         fill(255, 255, 255)
         translate(i, 0 , 0 )
         sphere()
