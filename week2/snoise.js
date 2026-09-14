@@ -20,19 +20,28 @@ let currentY;
 
 
 function draw() {
-  stroke("#d81b1b")
   background(0);
 
    if (mouseIsPressed) {
+    fill("#c51414")
 
-    currentX = (mouseX) + 100*noise(0.005 * frameCount)  ;
-    currentY = (mouseY) + 100*noise(0.005 * frameCount + 1000);
+    currentX = (mouseX) + 35*noise(0.085 * frameCount)  ;
+    currentY = (mouseY) + 35*noise(0.085 * frameCount + 1000);
+    let size = 50 + 100* noise(0.155 * frameCount)
+
   }
   else{  
-  currentX = windowWidth * noise(0.005 * frameCount);
-  currentY = windowHeight * noise(0.005 * frameCount + 1000);}
+  fill("#17c514")
 
-  circle(currentX, currentY, 100);
+  let shiftX = noise(0.005 * frameCount+1000);
+  let shiftY = noise(0.005 * frameCount);
+  // currentX = windowWidth * noise(0.005 * frameCount); //th
+  // currentY = windowHeight * noise(0.005 * frameCount + 1000);}
+  currentX = currentX + shiftX;
+  currentY = currentY + shiftY;
 
+  }
+  let size = 50 + 100* noise(0.008 * frameCount)
+  circle(currentX, currentY, size);
   
 }
