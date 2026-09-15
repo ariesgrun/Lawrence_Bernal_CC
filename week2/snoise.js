@@ -54,3 +54,7 @@ function draw() {
   rect(0,0,size,size)
   pop();
 }
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
