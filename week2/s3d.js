@@ -112,6 +112,12 @@ fill(0,0,255);
 sphere(20);
 pop();
 
+
+
+
 }
 
 
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
