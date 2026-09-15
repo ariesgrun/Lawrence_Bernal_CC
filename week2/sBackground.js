@@ -15,7 +15,7 @@ function setup() {
   describe('A red box on a white background.');
 
   cam = createCamera();
-
+  angleMode(DEGREES)
 }
 
 function draw() {
@@ -43,17 +43,44 @@ orbitControl();
 if (cam.eyeY < 0){
   fill(255, 0, 0);
 }
-else{fill(0, 255, 0);}
+
+
+else{
+  fill(0, 255, 0);
+}
+
 
 box();
 
+for (let i = 0; i < 6; i++) {
+  push();
+  rotateZ(i*60)
+  translate(150, 10, 10);
+  sphere(50);
+  pop();
 
+}
 
 for (let i = 0; i < 6; i++) {
   push();
+  rotateZ(i*60)
+  translate(250, 150, 10);
   sphere(50);
-  pop;
+  pop();
   
 }
+push();
+translate(spherex, spherey, spehrez);
+fill(0,0,255)
+sphere(radius, detailX, detailY);
 
+pop();
 }
+
+let spherex;
+let spherey;
+let spehrez;
+
+let nextX;
+let nextY;
+let nextZ;
