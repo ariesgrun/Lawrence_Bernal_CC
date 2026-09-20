@@ -2,19 +2,24 @@
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background(0)
-  rectMode(CENTER)
-  angleMode(DEGREES)
-  noLoop();
+  background(0);
+  rectMode(CENTER);
+  angleMode(DEGREES);
+  columns = ceil(width / 100);
+  rows = ceil(height / 100);
 }
 ///https://p5js.org/reference/p5/arc/
+
+
+let columns;
+let rows;
 
 
 function draw() {
 translate(50,50);
 
-  for(let i = 0; i<100 ; i++) {
-    for (let j = 0; j < 100; j++) {  
+  for(let i = 0; i < columns ; i++) {
+    for (let j = 0; j < rows; j++) {  
       push();
       fill("#ffffff");
       noStroke();
@@ -29,13 +34,17 @@ translate(50,50);
       }
       
     }
-
+    noLoop();
 }
 
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
+
+
+
+
 
 //  push();
 //   fill("#ffffff");
