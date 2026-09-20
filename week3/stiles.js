@@ -8,14 +8,17 @@ function setup() {
   columns = ceil(width / 100);
   rows = ceil(height / 100);
 }
+//https://p5js.org/reference/p5/noLoop/
 ///https://p5js.org/reference/p5/arc/
-
+//https://p5js.org/reference/p5/redraw/
 
 let columns;
 let rows;
 
 
 function draw() {
+columns = ceil(width / 100);
+rows = ceil(height / 100);
 translate(50,50);
 
   for(let i = 0; i < columns ; i++) {
@@ -35,6 +38,7 @@ translate(50,50);
       
     }
     noLoop();
+    
 }
 
 
@@ -42,7 +46,9 @@ function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
 
-
+function mousePressed() {
+  redraw();                 // run draw() once, which re-rolls every tile
+}
 
 
 
