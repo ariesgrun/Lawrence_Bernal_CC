@@ -2,21 +2,20 @@
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background(0)
+  background("#223843")
+  angleMode(DEGREES)
+
 }
 
-//https://p5js.org/reference/p5/ceil/
-let cols;
-let rows;
-
-let rectSize = random(10,50);
-
 function draw() {
-  rows = ceil(windowHeight / rectSize);
-  cols = ceil(windowWidth / rectSize);
-  rectSize = random(10,50);
+  ranslate(width/2, height/2);
 
-  for (let i = 0; i < rows; i++) {
-    rect(i*rows,20,20,20);
-    
+for (let i = 0; i < 10; i++) {
+  push();
+  noFill();
+  stroke("#EFF1F3")
+  circle(0, 0, 100*i)
+  pop();
+
+  }
 }
