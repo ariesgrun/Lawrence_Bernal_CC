@@ -15,7 +15,7 @@ for (let i = 1; i < 11; i++) {
   push();
   noFill();
   stroke("#EFF1F3")
-  circle(0, 0, 100*i)
+  circle(0, 0, 200*i)
   pop();
   
 
@@ -26,11 +26,11 @@ for (let i = 1; i < 11; i++) {
 
   rotate(r* 10* i);
   stroke("#5E0B15");
-  line(0, 0, 50*i, 0);
+  line(0, 0, 100*i, 0);
   stroke("#EAD637");
-  translate(50*i, 0);
+  translate(100*i, 0);
   rotate(r * 5)
-  triangle(-8, -10, 8, -10, 0, 10);
+  triangle(-16, -20, 16, -20, 0, 20);
   pop();
   }
   r++
@@ -40,4 +40,7 @@ for (let i = 1; i < 11; i++) {
     
   }
 
+}
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
