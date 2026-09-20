@@ -8,7 +8,7 @@ function setup() {
 }
 
 function draw() {
-  ranslate(width/2, height/2);
+translate(width/2, height/2);
 
 for (let i = 0; i < 10; i++) {
   push();
@@ -16,6 +16,6 @@ for (let i = 0; i < 10; i++) {
   stroke("#EFF1F3")
   circle(0, 0, 100*i)
   pop();
-
   }
+  
 }
