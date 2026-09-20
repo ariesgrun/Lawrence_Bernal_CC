@@ -4,18 +4,29 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   background("#223843")
   angleMode(DEGREES)
-
+  frameRate(24)
 }
+let r = 0; 
 
 function draw() {
 translate(width/2, height/2);
-
-for (let i = 0; i < 10; i++) {
+for (let i = 1; i < 11; i++) {
   push();
   noFill();
   stroke("#EFF1F3")
   circle(0, 0, 100*i)
   pop();
-  }
   
+
+  push();
+  //triangle(x1, y1, x2, y2, x3, y3)
+  noFill();
+  stroke("#EAD637");
+  rotate(r* 10* i)
+  translate(50*i, 0);
+  triangle(-8, -10, 8, -10, 0, 10);
+  pop();
+  }
+  r++
+
 }
