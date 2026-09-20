@@ -4,6 +4,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0)
   rectMode(CENTER)
+  angleMode(DEGREES)
 }
 
 function draw() {
@@ -14,6 +15,7 @@ function draw() {
   rect(0,0,100,100)
 
   fill(255,0,0);
-  arc(0, 0, 100, 100,0,HALF_PI)
+  arc(-50, -50, 100, 100,0,90)
+  arc(50,50, 100, 100,180,270)
 
 }
