@@ -10,6 +10,7 @@ function setup() {
 //https://p5js.org/reference/p5/bezier/
 //bezier(x1, y1, x2, y2, x3, y3, x4, y4)
 //https://p5js.org/reference/p5/resetMatrix/
+//https://www.youtube.com/watch?v=enNfb6p3j_g
 
 function draw() { //top right circle
   background("#223843");
