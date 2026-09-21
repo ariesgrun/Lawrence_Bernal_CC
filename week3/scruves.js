@@ -1,10 +1,11 @@
 
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+
+  createCanvas(3414/2, 1778/2);
   background("#223843")
   angleMode(DEGREES)
-  
+  noLoop();
 }
 //https://p5js.org/reference/p5/bezier/
 //bezier(x1, y1, x2, y2, x3, y3, x4, y4)
@@ -16,54 +17,92 @@ let r1;
 let r2;
 let r3;
 
-function draw() {
+function draw() { //top right circle
+  background("#223843");
   for (let c = 0; c<13; c++){
     noFill();
     stroke("#f0f0f0")
     circle(0, 0, 50*c)
   }
-  translate(windowWidth/2, windowHeight/2);
+  translate(width/2, height/2);
 
 
-  noFill();
+  noFill(); //green waves
   for (let i = 0; i<35; i++){
     push(); 
     stroke("#4C9A6A")
     translate(-290,0)
     circle(0, 0,20) 
+    circle(0, 0,420)
+    arc(0, 0, 100, 100, 180, 404)
     rotate(4*i)  
-    bezier(0, 0, 580, 550, -250, -200, windowWidth, 40);     
+    bezier(0, 0, 580, 550, -250, -200, width, 40);     
+    pop();
+
+    push();//purple rings
+    stroke("#B370B0")
+    translate(-290,0)
+    circle(0, 0,550)
+    for (let p2 = 0; p2 < 6; p2++) {
+      circle(0,-275,30)
+      rotate(24*p2)
+      
+    }
     pop();
     }
 
-  for (let i = 0; i<35; i++){
+
+  for (let i = 0; i<16; i++){ //yellow curves
     push(); 
-    resetMatrix();
     stroke("#E6D9A2")
-    translate(width*0.2,350)
-    circle(0, 0,20) 
-    bezier(0, 0, -150, -100, 0, 0, -450, 200);     
+    translate(-450,-225)
+    rotate(2.5*i);
+    circle(0, 0,30); 
+    bezier(0, 0, -150, -100, 0, 0, -450, 800);     
     pop();
     }
 
 
   resetMatrix();
-  translate(width,160)
 
 
-  // for (let v = 0; v < 24; v++) {
-  //   push();
-  //   stroke("#A41623")
-  //   bezier(-100,0,03,50,60,0777)
+  translate(width/2 +20, height/2);
+  stroke("#B370B0")
+  for (let p = 0; p<20; p++){//purple lines
+  push();
+  circle(0,0,10)
+  circle(0,0,40)
+  rotate(3*p)
+  bezier(0,0,0,0,200,-250,-500,-500)
+  pop();
+  }
 
-  //   circle(0,0,500)
-  //   pop();
-  // }
+  resetMatrix();
+  translate(width*0.8, height*0.3)
+  stroke("#FB6107")
+  circle(0,0,90)
+
+  for (let o1 = 0; o1 < 10; o1++) {
+    push();
+    rotate(3*o1);
+    bezier(-300,-300,  -250,150,   0,0,  500,150)
+    pop();
+    
+  }
+
+  translate(-240,100)
+  circle(0,0, 100)
+  circle(-22,-150, 50)
+  stroke("#B370B0")
+  circle(-22,-125, 50)
+  circle(0,0, 150)
+  for (let o2 = 0; io2 < 6; o2++) {
+
+  }
+  resetMatrix();
+  translate(width*0.9, height*0.1)
+  rect(0,0,10,10)
+
 
 }
 
-
-
-  // for (let i = 0; i < 6; i++) {
-  // rotate(60)
-  // bezier(0, 0, 100, 100, -200, -200, 400, 40);}
