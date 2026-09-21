@@ -11,12 +11,6 @@ function setup() {
 //bezier(x1, y1, x2, y2, x3, y3, x4, y4)
 //https://p5js.org/reference/p5/resetMatrix/
 
-
-let r = 0;
-let r1;
-let r2;
-let r3;
-
 function draw() { //top right circle
   background("#223843");
   for (let c = 0; c<13; c++){
