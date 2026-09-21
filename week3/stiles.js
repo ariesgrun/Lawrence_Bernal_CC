@@ -27,7 +27,7 @@ translate(50,50);
       fill("#ffffff");
       noStroke();
       translate(100*i,100*j);
-      rotate(floor(random(0, 100))*90);
+      rotate(floor(random(0, 100))*90); //random function has a uniform distribution
       rect(0,0,100,100);
       noFill();
       stroke(255,0,0)
