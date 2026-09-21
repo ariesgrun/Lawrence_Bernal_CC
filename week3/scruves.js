@@ -34,7 +34,7 @@ function draw() { //top right circle
     translate(-290,0)
     circle(0, 0,20) 
     circle(0, 0,420)
-    arc(0, 0, 100, 100, 180, 404)
+    arc(0, 0, 100, 100, 180, 403)
     rotate(4*i)  
     bezier(0, 0, 580, 550, -250, -200, width, 40);     
     pop();
@@ -81,6 +81,8 @@ function draw() { //top right circle
   translate(width*0.8, height*0.3)
   stroke("#FB6107")
   circle(0,0,90)
+  circle(0,0,45)
+
 
   for (let o1 = 0; o1 < 10; o1++) {
     push();
@@ -96,13 +98,24 @@ function draw() { //top right circle
   stroke("#B370B0")
   circle(-22,-125, 50)
   circle(0,0, 150)
-  for (let o2 = 0; io2 < 6; o2++) {
 
-  }
   resetMatrix();
-  translate(width*0.9, height*0.1)
-  rect(0,0,10,10)
+  translate(width*0.9, height*0.1);
+  stroke("#E6D9A2")
 
+
+    for (let o1 = 0; o1 < 10; o1++) {
+    push();
+    rotate(3*o1);
+    bezier(-200,-200,  -25*o1,40*o1,   0,0,  500,100)
+    pop();
+    
+  }
+  circle(0,200,25);
+  circle(0,200,50);
+  circle(-265,0,125);
+  stroke("#FB6107")
+  circle(-265,0,75);
 
 }
 
