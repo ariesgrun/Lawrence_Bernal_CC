@@ -32,7 +32,7 @@ function draw() {
   for (let v = 0; v < 24; v++) {
     push();
     rotate(12)
-    stroke("#A41623")
+    stroke("#f0f0f0")
     bezier(-10,0,3,50,0,127)
   }
 
@@ -49,4 +49,5 @@ function draw() {
     pop();
   }
   r++;
+  noLoop();
 }
