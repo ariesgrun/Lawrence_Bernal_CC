@@ -1,12 +1,11 @@
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background(255,0,0);
+  background("#FFFFFF");
   rectMode(CENTER);
   angleMode(DEGREES);
-  columns = ceil(width / 100);
-  rows = ceil(height / 100);
-  
+columns = ceil(width / 100);
+rows = ceil(height / 100);
 }
 //https://p5js.org/reference/p5/noLoop/
 ///https://p5js.org/reference/p5/arc/
@@ -22,39 +21,53 @@ let rows;
 function draw() {
 columns = ceil(width / 100);
 rows = ceil(height / 100);
+background("#FFFFFF");
+fill("#FFFFFF");
+
+push();
 translate(50,50);
 
   for(let i = 0; i < columns ; i++) {
     for (let j = 0; j < rows; j++) {  
-        circle(0, 0, 100)
+        let randomtile = floor(random(1, 7));
+        switch (randomtile) { //switch cases are cleaner else if statements
+          case 1:
+            twocurves(i, j);
+            break;
+          case 2:
+            line2dots(i, j);
+            break;
+          case 3:
+            circs4(i, j);
+            break;
+          case 4:
+            crossT(i, j);
+            break;
+          case 5:
+            frown(i, j);
+            break;
+          case 6:
+            THead(i, j);
+            break;        
+        }
       }
       
     }
+    pop();
     noLoop();
-    
-}
+  }
 
 
 
-
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-}
-
-function mousePressed() {
-  redraw();                 // run draw() once, which re-rolls every tile
-}
 
 
 //////////////////////////////////////////
 //tiles
-let i;
-let j;
 
 function twocurves(i,j){
   push();
     translate(100*i,100*j);
-    rotate(floor(random(1, 4))*90);
+    rotate(floor(random(1, 5))*90);
 
     rect(0, 0, 100, 100);
     stroke(255,0,0);
@@ -72,7 +85,7 @@ function twocurves(i,j){
 function line2dots(i,j){
   push();
     translate(100*i,100*j);
-    rotate(floor(random(1, 4))*90);
+    rotate(floor(random(1, 5))*90);
     rect(0, 0, 100, 100);
     stroke(255,0,0);
     noFill();
@@ -88,7 +101,7 @@ function line2dots(i,j){
 function circs4(i,j){
   push();
     translate(100*i,100*j);
-    rotate(floor(random(1, 4))*90);
+    rotate(floor(random(1, 5))*90);
 
     rect(0, 0, 100, 100);
     stroke(255,0,0);
@@ -101,10 +114,10 @@ function circs4(i,j){
 }
 
 
-function cross(i,j){
+function crossT(i,j){
 push();
   translate(100*i,100*j);
-  rotate(floor(random(1, 4))*90);
+  rotate(floor(random(1, 5))*90);
 
   rect(0, 0, 100, 100);
   stroke(255,0,0);
@@ -128,7 +141,7 @@ pop();
 function frown(i,j){
 push();
   translate(100*i,100*j);
-  rotate(floor(random(1, 4))*90);
+  rotate(floor(random(1, 5))*90);
 
   rect(0, 0, 100, 100);
   stroke(255,0,0);
@@ -146,7 +159,7 @@ pop();
 function THead(i,j){
   push();
     translate(100*i,100*j);
-    rotate(floor(random(1, 4))*90);
+    rotate(floor(random(1, 5))*90);
   
     rect(0, 0, 100, 100);
     stroke(255,0,0);
@@ -182,3 +195,13 @@ function THead(i,j){
   //     }
       
   //   }
+
+
+  function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  redraw()
+}
+
+function mousePressed() {
+  redraw();                 // run draw() once, which re-rolls every tile
+}
