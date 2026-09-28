@@ -29,7 +29,7 @@ translate(50,50);
 
   for(let i = 0; i < columns ; i++) {
     for (let j = 0; j < rows; j++) {  
-        let randomtile = floor(random(1, 8));
+        let randomtile = floor(random(1, 9));
         switch (randomtile) { //switch cases are cleaner else if statements
           case 1:
             twocurves(i, j);
@@ -52,6 +52,9 @@ translate(50,50);
           case 7:
             Diamond4(i,j);
             break;     
+          case 8:
+            TheadStright(i,j);
+            break;
         }
       }
       
@@ -195,10 +198,33 @@ function Diamond4(i,j){
   pop();
 }
 
+function TheadStright(i,j){
+    push();
+    translate(100*i,100*j);
+    rotate(floor(random(1, 5))*90);
+  
+    rect(0, 0, 100, 100);
+    stroke(255,0,0);
+    noFill();
+    
 
 
+    arc(0,-50, 25, 25, 0, 180);
 
-///
+    
+
+    line(-50, -25/2, 50,  -25/2);
+
+    line(-25/2, 50, -25/2, 25/2);
+    line(-50, 25/2, -25/2, 25/2);
+
+    line(25/2, 50,25/2,25/2)
+    line(25/2, 25/2 ,50,25/2)
+  pop();
+}
+
+
+///code block from stiles.js
 
   // for(let i = 0; i < columns ; i++) {
   //   for (let j = 0; j < rows; j++) {  
@@ -217,7 +243,7 @@ function Diamond4(i,j){
       
   //   }
 
-
+////////////////////
   function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   redraw()
