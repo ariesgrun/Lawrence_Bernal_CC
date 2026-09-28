@@ -11,6 +11,9 @@ function setup() {
 ///https://p5js.org/reference/p5/arc/
 //https://p5js.org/reference/p5/redraw/
 
+// truchet reference https://nedbatchelder.com/blog/202208/truchet_images
+//goal: recreate Christopher Carlson's tiles
+
 let columns;
 let rows;
 
