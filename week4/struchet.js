@@ -29,7 +29,7 @@ translate(50,50);
 
   for(let i = 0; i < columns ; i++) {
     for (let j = 0; j < rows; j++) {  
-        let randomtile = floor(random(1, 7));
+        let randomtile = floor(random(1, 8));
         switch (randomtile) { //switch cases are cleaner else if statements
           case 1:
             twocurves(i, j);
@@ -48,7 +48,10 @@ translate(50,50);
             break;
           case 6:
             THead(i, j);
-            break;        
+            break;   
+          case 7:
+            Diamond4(i,j);
+            break;     
         }
       }
       
@@ -177,6 +180,24 @@ function THead(i,j){
     line(50, 25/2, 25/2, 25/2);
   pop();
 }
+
+function Diamond4(i,j){
+  push();
+    translate(100*i,100*j);
+    rotate(floor(random(1, 5))*90);
+    rect(0, 0, 100, 100);
+    stroke(255,0,0);
+    noFill();
+    arc(-50,50, 75, 75, 270, 0);
+    arc(50,50, 75, 75, 180, 270);
+    arc(50,-50, 75, 75, 90, 180);
+    arc(-50,-50, 75, 75, 0, 90);
+  pop();
+}
+
+
+
+
 ///
 
   // for(let i = 0; i < columns ; i++) {
