@@ -23,8 +23,8 @@ columns = ceil(width / 100);
 rows = ceil(height / 100);
 background("#FFFFFF");
 fill("#FFFFFF");
+noStroke();//
 
-push();
 translate(50,50);
 
   for(let i = 0; i < columns ; i++) {
@@ -53,7 +53,7 @@ translate(50,50);
       }
       
     }
-    pop();
+
     noLoop();
   }
 
