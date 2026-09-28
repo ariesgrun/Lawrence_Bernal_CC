@@ -27,7 +27,8 @@ translate(50,50);
       fill("#ffffff");
       noStroke();
       translate(100*i,100*j);
-      rotate(floor(random(0, 100))*90); //random function has a uniform distribution adding higher range would make it more random i guess?
+      rotate(floor(random(0, 100))*90); //random function has a uniform distribution adding higher range would make it more random i guess? 
+      // NAH I WAS TWEAKING random(0, 100) is the same as random(0,4) in this case
       rect(0,0,100,100);
       noFill();
       stroke(255,0,0)
