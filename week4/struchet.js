@@ -19,6 +19,9 @@ let rows;
 
 
 function draw() {
+    if (bDoExportSvg){
+    beginRecordSvg("myOutput.svg");
+  }
 columns = ceil(width / 100);
 rows = ceil(height / 100);
 background("#FFFFFF");
@@ -58,9 +61,15 @@ translate(50,50);
         }
       }
       
-    }
+  }
+  
 
-    noLoop();
+  noLoop();
+    if (bDoExportSvg){
+    endRecordSvg();
+    bDoExportSvg = false;
+  }
+  
   }
 
 
@@ -75,7 +84,7 @@ function twocurves(i,j){
     translate(100*i,100*j);
     rotate(floor(random(1, 5))*90);
 
-    rect(0, 0, 100, 100);
+    //rect(0, 0, 100, 100);
     stroke(255,0,0);
     noFill();
     arc(-50,50 , 75, 75, 270, 0);
@@ -92,7 +101,7 @@ function line2dots(i,j){
   push();
     translate(100*i,100*j);
     rotate(floor(random(1, 5))*90);
-    rect(0, 0, 100, 100);
+    //rect(0, 0, 100, 100);
     stroke(255,0,0);
     noFill();
     arc(-50,0, 25, 25, 270, 90);
@@ -109,7 +118,7 @@ function circs4(i,j){
     translate(100*i,100*j);
     rotate(floor(random(1, 5))*90);
 
-    rect(0, 0, 100, 100);
+    //rect(0, 0, 100, 100);
     stroke(255,0,0);
     noFill();
     arc(-50,0, 25, 25, 270, 90);
@@ -125,7 +134,7 @@ push();
   translate(100*i,100*j);
   rotate(floor(random(1, 5))*90);
 
-  rect(0, 0, 100, 100);
+  //rect(0, 0, 100, 100);
   stroke(255,0,0);
   noFill();
   
@@ -149,7 +158,7 @@ push();
   translate(100*i,100*j);
   rotate(floor(random(1, 5))*90);
 
-  rect(0, 0, 100, 100);
+  //rect(0, 0, 100, 100);
   stroke(255,0,0);
   noFill();
 
@@ -167,7 +176,7 @@ function THead(i,j){
     translate(100*i,100*j);
     rotate(floor(random(1, 5))*90);
   
-    rect(0, 0, 100, 100);
+    //rect(0, 0, 100, 100);
     stroke(255,0,0);
     noFill();
     
@@ -188,7 +197,7 @@ function Diamond4(i,j){
   push();
     translate(100*i,100*j);
     rotate(floor(random(1, 5))*90);
-    rect(0, 0, 100, 100);
+   // rect(0, 0, 100, 100);
     stroke(255,0,0);
     noFill();
     arc(-50,50, 75, 75, 270, 0);
@@ -203,7 +212,7 @@ function TheadStright(i,j){
     translate(100*i,100*j);
     rotate(floor(random(1, 5))*90);
   
-    rect(0, 0, 100, 100);
+    //rect(0, 0, 100, 100);
     stroke(255,0,0);
     noFill();
     
@@ -251,4 +260,13 @@ function TheadStright(i,j){
 
 function mousePressed() {
   redraw();                 // run draw() once, which re-rolls every tile
+}
+
+
+let bDoExportSvg = false; 
+
+function keyPressed(){
+  if (key == 's'){ 
+    bDoExportSvg = true; 
+  }
 }
