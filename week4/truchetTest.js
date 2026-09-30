@@ -153,8 +153,17 @@ function draw() {
     line(25/2, 50,25/2,25/2)
     line(25/2, 25/2 ,50,25/2)
 
-    pop();
+  pop();
+  
 
 
 
+}
+
+let bDoExportSvg = false; 
+
+function keyPressed(){
+  if (key == 's'){ 
+    bDoExportSvg = true; 
+  }
 }
