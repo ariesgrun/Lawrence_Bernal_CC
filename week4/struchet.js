@@ -232,7 +232,7 @@ function TheadStright(i,j){
   pop();
 }
 
-
+//
 ///code block from stiles.js
 
   // for(let i = 0; i < columns ; i++) {
