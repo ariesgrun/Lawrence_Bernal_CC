@@ -130,7 +130,7 @@ function draw() {
     arc(50,-50, 75, 75, 90, 180);
     arc(-50,-50, 75, 75, 0, 90);
     pop();
-
+//// 8 theadstraight
     push();
 
 
@@ -153,10 +153,7 @@ function draw() {
     line(25/2, 50,25/2,25/2)
     line(25/2, 25/2 ,50,25/2)
 
-  pop();
-  
-
-
+    pop();
 
 }
 
@@ -166,4 +163,5 @@ function keyPressed(){
   if (key == 's'){ 
     bDoExportSvg = true; 
   }
+
 }
