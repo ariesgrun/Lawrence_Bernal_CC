@@ -1,7 +1,7 @@
 
 
 function setup() {
-  createCanvas(1000, 1000, WEBGL);
+  createCanvas(1000, 800, WEBGL);
   angleMode(DEGREES)
   
 }
@@ -18,23 +18,26 @@ let ballSize = 50;
 let ballSpeed = 5;
 
 
-
 let cam;
 
 function draw() {
-  background(0);
-  if (keyIsDown('w')) {
-    ballz = ballz - ballSpeed;
-  }
-  if (keyIsDown('s')) {
-    ballz = ballz + ballSpeed;
-  }
-  if (keyIsDown('a')) {
-    ballx = ballx - ballSpeed;
-  }
-  if (keyIsDown('d')) {
-    ballx = ballx + ballSpeed;
-  }
+orbitControl();
+
+
+
+background(0);
+if (keyIsDown('w')) {
+  ballz = ballz - ballSpeed;
+}
+if (keyIsDown('s')) {
+  ballz = ballz + ballSpeed;
+}
+if (keyIsDown('a')) {
+  ballx = ballx - ballSpeed;
+}
+if (keyIsDown('d')) {
+  ballx = ballx + ballSpeed;
+}
 
 //moving ball
   push();
@@ -50,7 +53,26 @@ rotateX(90)
 plane(1000)
 pop();
 
-orbitControl();
+//backwall
+push();
+translate(0,-450,-500)
+plane(1000)
+pop();
+
+//right wall
+push();
+rotateY(90)
+translate(0,-450  ,500)
+plane(1000)
+pop();
+
+//left wall
+push();
+rotateY(90)
+translate(0,-450  ,-500)
+plane(1000)
+pop();
+
 
 
   
