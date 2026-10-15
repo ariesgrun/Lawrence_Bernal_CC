@@ -76,19 +76,19 @@ pop();
 
 //only have ball within boundaries
 
-if (ballx > 500) {
-  ballx = 500;
+if (ballx > 450) {
+  ballx = 450;
   
 }
-if (ballx < -500) {
-  ballx = -500;
+if (ballx < -450) {
+  ballx = -450;
 }
-if (ballz > 500) {
-  ballz = 500;
+if (ballz > 450) {
+  ballz = 450;
   
 }
-if (ballz < -500) {
-  ballz = -500;
+if (ballz < -450) {
+  ballz = -450;
   
 }
 
