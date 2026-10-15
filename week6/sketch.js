@@ -22,14 +22,22 @@ async function setup() {
       pillarHeight.push(random(20,400))
       pillarActive.push(false)
     }
-}
-  let pillarx = [];
-  let pillarz = [];
-  let pillarHeight = [];
-  let pillarActive = [];
 
-  let activePillar = 0;
-  let activeDoor = false;
+
+  camera(0, -470, 900,  // cam position 
+         0, -50, 0,  // where it looks
+         0, 1, 0); // which way is up
+
+  perspective(60, width / height, 0.1, 5000);
+
+}
+let pillarx = [];
+let pillarz = [];
+let pillarHeight = [];
+let pillarActive = [];
+
+let activePillar = 0;
+let activeDoor = false;
 let ballx = 0;
 let ballz = 250;
 let ballSize = 50;
@@ -42,7 +50,7 @@ let cam;
 /////////////////////////////////
 
 function draw() {
-orbitControl();
+// orbitControl();
 // debugMode();
 
 
@@ -66,7 +74,7 @@ push();
 texture(earthTex);
 
 translate(ballx, 0, ballz);
-rotateY(frameCount * 0.5);
+rotateY(frameCount * 0.75);
 sphere(ballSize);
 pop(); 
 
@@ -75,7 +83,7 @@ pop();
 push();
 translate(0, 50, 0)
 rotateX(90)
-plane(1000)
+plane(1100)
 pop();
 
 //backwall
@@ -144,7 +152,7 @@ for (let index = 0; index < pillarx.length; index++) {
 
 push();
 if (activePillar == pillarx.length) {
-  fill(0,255,0);
+  fill(0,255,0); //turn green if all pillars are active
   activeDoor = true;
 }
 else{fill(255,0,0)}
