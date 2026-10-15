@@ -2,7 +2,7 @@
 //fixed camera
 //move ball to door to change sketch
 
-
+//https://www.w3schools.com/JS/js_array_methods.asp
 //https://p5js.org/reference/p5/p5.Camera/
 //https://www.youtube.com/watch?v=BW3D9WwalQE
 
@@ -23,6 +23,7 @@ function setup() {
   let pillarHeight = [];
   let pillarActive = [];
 
+  let activePillar = 0;
 
 let ballx = 0;
 let ballz = 250;
@@ -107,24 +108,41 @@ if (ballz < -450) {
   
 }
 
-//door
-
-push();
-fill(255,0,0)
-translate(0,-100,-480);
-box(150, 350, 20);
-pop();
-
 
 //pillars
+
+///check if pillar is touched
+for (let i = 0; i < pillarx.length; i++) {
+  if (pillarActive[i] == false && dist(ballx, ballz, pillarx[i], pillarz[i]) < 50) {
+    pillarActive[i] = true;
+    activePillar++;
+  }
+}
+
+
 for (let index = 0; index < pillarx.length; index++) {
   push();
+  if (pillarActive[index]) {//if pillar touched turn green
+    fill(0,255,0)
+  }
+  else{fill(255,0,0)}//if pillar not touched turn red
+
   translate(pillarx[index], 0, pillarz[index])
   box(60, pillarHeight[index], 60);
   pop();
   
 }
+//door
 
+push();
+if (activePillar == pillarx.length) {fill(0,255,0)
+  
+}
+else{fill(255,0,0)}
+
+translate(0,-100,-480);
+box(150, 350, 20);
+pop();
   
 }
 
