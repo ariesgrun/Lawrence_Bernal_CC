@@ -8,13 +8,34 @@ function setup() {
 //fixed camera
 //move ball to door to change sketch
 
-let ballx;
-let ballz;
+let ballx = 0;
+let ballz = 51;
 let ballSize = 50;
 let ballSpeed = 5;
 
 function draw() {
   background(0);
+  if (keyIsDown('w')) {
+    ballz = ballz - ballSpeed;
+  }
+  if (keyIsDown('s')) {
+    ballz = ballz + ballSpeed;
+  }
+  if (keyIsDown('a')) {
+    ballx = ballx - ballSpeed;
+  }
+  if (keyIsDown('d')) {
+    ballx = ballx + ballSpeed;
+  }
+
+
+  push();
+  translate(ballx, 0, ballz);
   sphere(ballSize);
+  pop(); 
+
+
+
+
   
 }
