@@ -13,7 +13,7 @@ function setup() {
 //https://p5js.org/reference/p5/p5.Camera/
 
 let ballx = 0;
-let ballz = 51;
+let ballz = 250;
 let ballSize = 50;
 let ballSpeed = 5;
 
@@ -22,7 +22,7 @@ let cam;
 
 function draw() {
 orbitControl();
-
+debugMode();
 
 
 background(0);
@@ -39,11 +39,12 @@ if (keyIsDown('d')) {
   ballx = ballx + ballSpeed;
 }
 
+
 //moving ball
-  push();
-  translate(ballx, 0, ballz);
-  sphere(ballSize);
-  pop(); 
+push();
+translate(ballx, 0, ballz);
+sphere(ballSize);
+pop(); 
 
 
 //floor
@@ -72,6 +73,24 @@ rotateY(90)
 translate(0,-450  ,-500)
 plane(1000)
 pop();
+
+//only have ball within boundaries
+
+if (ballx > 500) {
+  ballx = 500;
+  
+}
+if (ballx < -500) {
+  ballx = -500;
+}
+if (ballz > 500) {
+  ballz = 500;
+  
+}
+if (ballz < -500) {
+  ballz = -500;
+  
+}
 
 
 
