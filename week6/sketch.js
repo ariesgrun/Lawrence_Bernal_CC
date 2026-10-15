@@ -1,10 +1,3 @@
-
-
-function setup() {
-  createCanvas(1000, 800, WEBGL);
-  angleMode(DEGREES)
-  
-}
 //goal 3d scene with sphere you control to move around
 //fixed camera
 //move ball to door to change sketch
@@ -12,6 +5,24 @@ function setup() {
 
 //https://p5js.org/reference/p5/p5.Camera/
 //https://www.youtube.com/watch?v=BW3D9WwalQE
+
+
+function setup() {
+  createCanvas(1000, 800, WEBGL);
+  angleMode(DEGREES)
+
+  for (let i = 0; i < 6; i++) {
+      pillarx.push(random(-450, 450));
+      pillarz.push(random(-450, 450));
+      pillarHeight.push(random(20,400))
+      pillarActive.push(false)
+    }
+}
+  let pillarx = [];
+  let pillarz = [];
+  let pillarHeight = [];
+  let pillarActive = [];
+
 
 let ballx = 0;
 let ballz = 250;
@@ -21,9 +32,12 @@ let ballSpeed = 5;
 
 let cam;
 
+
+/////////////////////////////////
+
 function draw() {
 orbitControl();
-debugMode();
+// debugMode();
 
 
 background(0);
@@ -101,5 +115,16 @@ translate(0,-100,-480);
 box(150, 350, 20);
 pop();
 
+
+//pillars
+for (let index = 0; index < pillarx.length; index++) {
+  push();
+  translate(pillarx[index], 0, pillarz[index])
+  box(60, pillarHeight[index], 60);
+  pop();
   
 }
+
+  
+}
+
