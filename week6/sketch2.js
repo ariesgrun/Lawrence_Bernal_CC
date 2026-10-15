@@ -115,10 +115,10 @@ else if (keyIsDown(UP_ARROW)) {
     counter = counter +  2.4;   // spin faster
     } 
 else if (keyIsDown(DOWN_ARROW)) {
-    counter = counter -  2.4;   // spin faster
+    counter = counter -  2.4;   // spin backward faster
     }
 else {
-    counter = counter +  0.4;   // normal spin
+    counter = counter +  0.4;   // normal spin //fake right arrow
     }
 
 if (counter < 0) {
