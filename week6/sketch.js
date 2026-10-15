@@ -11,6 +11,7 @@ function setup() {
 
 
 //https://p5js.org/reference/p5/p5.Camera/
+//https://www.youtube.com/watch?v=BW3D9WwalQE
 
 let ballx = 0;
 let ballz = 250;
@@ -92,7 +93,13 @@ if (ballz < -450) {
   
 }
 
+//door
 
+push();
+fill(255,0,0)
+translate(0,-100,-480);
+box(150, 350, 20);
+pop();
 
   
 }
