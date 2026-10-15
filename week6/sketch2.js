@@ -54,17 +54,17 @@ function draw() {
 
 
  
-  if (ballx > 450) {
-    ballx = 450;
+  if (ballx > 400) {
+    ballx = 400;
   }
-  if (ballx < -450) {
-    ballx = -450;
+  if (ballx < -400) {
+    ballx = -400;
   }
-  if (ballz > 450) {
-    ballz = 450;
+  if (ballz > 370) {
+    ballz = 370;
   }
-if (ballz < -450) {
-    ballz = -450;
+if (ballz < -350) {
+    ballz = -350;
   }   
 
     //pillar active check
@@ -80,16 +80,16 @@ if (ballz < -450) {
   }
 
   //ball enters door
- if (activeDoor && dist(ballx, ballz, 0, -480) < 50) {
+ if (activeDoor && dist(ballx, ballz, 0, -375) < 50) {
     window.location.href = "index.html"; 
   }
 //door
   if (activeDoor) {
-    fill(0, 255, 0);
+    fill(0, 100, 0);
   } else {
-    fill(255, 0, 0);
+    fill(175, 0, 0);
   }
-  rect(0, -480, 150, 20);
+  rect(0, -375, 150, 20);
 
  //pillars
   for (let i = 0; i < pillarx.length; i++) {
