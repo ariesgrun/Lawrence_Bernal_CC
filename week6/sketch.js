@@ -5,11 +5,16 @@
 //https://www.w3schools.com/JS/js_array_methods.asp
 //https://p5js.org/reference/p5/p5.Camera/
 //https://www.youtube.com/watch?v=BW3D9WwalQE
+//https://www.youtube.com/watch?v=O1mYw-3Wl_Q&list=PLRqwX-V7Uu6bPhi8sS1hHJ77n3zRO9FR_&index=5
 
 
-function setup() {
+
+
+async function setup() {
+  earthTex = await loadImage("earthtexture.jpg");
   createCanvas(1000, 800, WEBGL);
   angleMode(DEGREES)
+  noStroke();
 
   for (let i = 0; i < 6; i++) {
       pillarx.push(random(-450, 450));
@@ -56,9 +61,12 @@ if (keyIsDown('d')) {
 }
 
 
-//moving ball
+//moving earth
 push();
+texture(earthTex);
+
 translate(ballx, 0, ballz);
+rotateY(frameCount * 0.5);
 sphere(ballSize);
 pop(); 
 
