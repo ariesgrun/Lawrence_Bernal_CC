@@ -1,7 +1,7 @@
 //goal: 2d version of the original
 
 async function setup() {
-  createCanvas(1000, 1000);
+  createCanvas(1000, 800);
   imageMode(CENTER);
   rectMode(CENTER);
   frameRate(24)
