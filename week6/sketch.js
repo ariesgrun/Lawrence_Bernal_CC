@@ -152,10 +152,10 @@ for (let index = 0; index < pillarx.length; index++) {
 
 push();
 if (activePillar == pillarx.length) {
-  fill(0,255,0); //turn green if all pillars are active
+  fill(0,100,0); //turn green if all pillars are active
   activeDoor = true;
 }
-else{fill(255,0,0)}
+else{fill(175,0,0)}
 
 translate(0,-100,-480);
 box(150, 350, 20);
