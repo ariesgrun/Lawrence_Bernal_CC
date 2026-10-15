@@ -24,7 +24,7 @@ function setup() {
   let pillarActive = [];
 
   let activePillar = 0;
-
+  let activeDoor = false;
 let ballx = 0;
 let ballz = 250;
 let ballSize = 50;
@@ -135,14 +135,20 @@ for (let index = 0; index < pillarx.length; index++) {
 //door
 
 push();
-if (activePillar == pillarx.length) {fill(0,255,0)
-  
+if (activePillar == pillarx.length) {
+  fill(0,255,0);
+  activeDoor = true;
 }
 else{fill(255,0,0)}
 
 translate(0,-100,-480);
 box(150, 350, 20);
 pop();
+
+if (activeDoor && dist(ballx, ballz, 0, -480) <50 ) {
+  // box(10,1000,10) spawn box if conditions met
+  window.location.href = "sketch2.html";
+}
   
 }
 
