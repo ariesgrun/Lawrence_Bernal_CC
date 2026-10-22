@@ -30,8 +30,8 @@ async function setup() {
 
 
 /////////////////GRID///////////////////////////////////
-  quadMap2 = pMapper.createQuadMap(400, 400, 20, 20);
-  GridBuf = createGraphics(1200, 1200);
+  quadMap2 = pMapper.createQuadMap(1000, 1000, 20, 20);
+  GridBuf = createGraphics(1000, 1000);
   GridBuf.background(0);
 
   columns = ceil(GridBuf.width / 50);
@@ -99,7 +99,7 @@ function fadingGrid(pg) {
       pg.push();
       pg.stroke(255, 0, 0);
       pg.fill(gridPosition.brightness);
-      pg.translate(50 * i, 50 * j);
+      pg.translate(50*i, 50*j);
       pg.rect(0, 0, 50, 50);
       pg.pop();
     }

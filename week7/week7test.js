@@ -29,9 +29,13 @@ function setup() {
 let columns;
 let rows;
 let grid = [];
-let totalSqauares =0;
+let totalSqauares = 0;
+
+
+
+
 function draw() {
-totalSqauares =0
+totalSqauares = 0
     if (random(0,100)<5) {
         let i = floor(random(columns));
         let j = floor(random(rows));
