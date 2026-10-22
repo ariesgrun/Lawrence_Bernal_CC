@@ -43,7 +43,7 @@ function draw() {
             } else {
                 gridPosition.Sandbelow = grid[i][j + 1].fallState;
             }
-        ////check if sand can fall then make it fall
+        ///check if sand can fall then make it fall
         if (gridPosition.fallState == true && gridPosition.Sandbelow == false) {
         grid[i][j + 1].fallState = true;
         grid[i][j + 1].color = gridPosition.color;
