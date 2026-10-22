@@ -24,7 +24,9 @@ let totalSqauares = 0;
 function draw() {
     // let gridPosition = grid[i][j];
     background(0)
-  if (random(0,100)<90) {//spawn at the top
+    totalSqauares = 0;
+    //spawn logic
+  if (random(0,100)<100) {//spawn at the top
         let i = floor(random(columns));
         if ( grid[i][0].fallState == false) {
             grid[i][0].fallState = true; //first row will spawn sand
@@ -41,7 +43,7 @@ function draw() {
             } else {
                 gridPosition.Sandbelow = grid[i][j + 1].fallState;
             }
-            ////check if sand can fall then make it fall
+        ////check if sand can fall then make it fall
         if (gridPosition.fallState == true && gridPosition.Sandbelow == false) {
         grid[i][j + 1].fallState = true;
         grid[i][j + 1].color = gridPosition.color;
@@ -54,12 +56,13 @@ function draw() {
     for (let j = 0; j < rows; j++) {
       if (grid[i][j].fallState == true) {
         fill(grid[i][j].color);
-        rect(10 * i, 10 * j, 10, 10);
+        rect(10*i, 10*j, 10, 10);
         totalSqauares++;
       }
     }
   }
 
+  ///reset when full
   if (totalSqauares == columns * rows) {
     for (let i = 0; i < columns; i++) {
       for (let j = 0; j < rows; j++) {
