@@ -38,7 +38,7 @@ let totalSqauares = 0;
 
 function draw() {
 totalSqauares = 0
-    if (random(0,100)<5) {
+    if (random(0,100)<90) {
         let i = floor(random(columns));
         let j = floor(random(rows));
         grid[i][j].fadeState = true;
