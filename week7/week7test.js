@@ -6,6 +6,8 @@
 
 
 //objects reference https://www.youtube.com/watch?v=-e5h4IGKZRY
+//2D array reference https://www.youtube.com/watch?v=3j_cr44OZTc
+
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
