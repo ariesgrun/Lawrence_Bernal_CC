@@ -1,7 +1,7 @@
 
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(400, 400);
   columns = ceil(width / 10);
     rows = ceil(height / 10);
   for(let i = 0; i < columns ; i++) {
@@ -14,6 +14,8 @@ function setup() {
             };
         }
     }
+    frameRate(60);
+    saveGif('sand', 40);
 }
 
 let columns;
@@ -71,5 +73,11 @@ function draw() {
         grid[i][j].color = 255;
       }
     }
+  }
+}
+
+function keyPressed() {
+  if (key === 'g') {
+    saveGif('sand', 60); // saves sand.gif, 5 seconds long
   }
 }
