@@ -1,7 +1,7 @@
 
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(1000, 1000);
   columns = ceil(width / 10);
     rows = ceil(height / 10);
   for(let i = 0; i < columns ; i++) {
@@ -14,8 +14,8 @@ function setup() {
             };
         }
     }
-    frameRate(60);
-    saveGif('sand', 40);
+
+
 }
 
 let columns;
