@@ -31,6 +31,9 @@ let pinch = 0;
 let pinchLoc;
 
 
+
+
+
 function draw() {
 //////////////////////////////////////////////
 //FLIP AND RESET POSIITION
@@ -39,6 +42,18 @@ function draw() {
   image(video, 0, 0, width, height);
 ///////////////////////////////////////
 
+
+////////////middlef////////////////////////
+  if (hands.length > 0) {
+    let t = hands[0].keypoints[4];
+    let m = hands[0].keypoints[12];
+    if (dist(t.x, t.y, m.x, m.y) < 25) {
+      middlef();
+    }
+  }
+
+
+/////////////////////////
   for (let i = 0; i < hands.length; i++) {
     let hand = hands[i];
 
@@ -121,9 +136,10 @@ function draw() {
 function gotHands(results) {
   hands = results;
 }
-
+let invertImg;
 function middlef() {
-
+  video.loadPixels();
+  
 }
 
 function ringf() {
